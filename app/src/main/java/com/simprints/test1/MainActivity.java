@@ -125,11 +125,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    private String token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsicHJlbWl1bV9hY2NvdW50Ijp0cnVlfSwidWlkIjoiNzAxODMxZGUtY2VjYi00OWQ2LWI4NzgtMzZhNDIyZDgzZWVkIiwiaWF0IjoxNDgwNTUzOTA4LCJleHAiOjE0ODA1NTc1MDgsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHl0b29sa2l0Lmdvb2dsZWFwaXMuY29tL2dvb2dsZS5pZGVudGl0eS5pZGVudGl0eXRvb2xraXQudjEuSWRlbnRpdHlUb29sa2l0IiwiaXNzIjoiZmlyZWJhc2VhdXRoQHRlc3QtZjliY2IuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJzdWIiOiJmaXJlYmFzZWF1dGhAdGVzdC1mOWJjYi5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSJ9.MudEtgIO_hri_oTLjE0SPDez14GG-k35AWYH707ET0JEA31tUOAVgAimM55E2ioveBNmpsMJ4Uxv3airURhR9UJQkzGYHnj-Sr76SDtvVf-8kH9pS_aMlP3Kl_IcXh9LpuWcByLfiGREkfhmNpqnNT7uZtVAh_GWeV-8b9baAh78Y-FSOFG5xfZzZ7mLuAhBkKt8QO-DUNlmQGdw-ohEaJ22APClOSy16tah7WxDzZJ6XUjGrCcxGF-518SGZssfrbU_j9qXBnCBhWb1egTB-LKVDBxBBvsJcleH0dhn79jQdg6fLgQvAWY6iY5BJu1m-wvtAMw05O0tPq9m91BSGw";
+
     private void signIn() {
         Log.d("THIS", "signIn");
 
         // [START sign_in_with_email]
-        mAuth.signInWithCustomToken("123456").addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithCustomToken(token).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (!task.isSuccessful()) {
